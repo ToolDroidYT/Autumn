@@ -1,0 +1,1 @@
+<x-app-layout :title="$order->receipt->receipt_number"><section class="section"><div class="container"><div class="no-print" style="margin-bottom:20px;"><x-button type="button" data-print>Print Receipt</x-button><x-button href="{{ route('orders.show', $order) }}" variant="outline">Back to Order</x-button></div><x-receipt :order="$order" /></div></section></x-app-layout>
