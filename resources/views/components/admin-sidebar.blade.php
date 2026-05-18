@@ -1,14 +1,14 @@
-<aside class="card admin-sidebar">
+<aside class="card admin-sidebar" aria-label="Admin navigation">
     @foreach([
-        'admin.index' => 'Overview',
-        'admin.products' => 'Products',
-        'admin.batches' => 'Batches',
-        'admin.orders' => 'Orders',
-        'admin.payments' => 'Payments',
-        'admin.announcements' => 'Announcements',
-        'admin.voting' => 'Voting',
-        'admin.users' => 'Users',
-    ] as $route => $label)
-        <a href="{{ route($route) }}" @class(['active' => request()->routeIs($route)])>{{ $label }}</a>
+        'admin.index' => ['Overview', 'home'],
+        'admin.products' => ['Products', 'shopping-bag'],
+        'admin.batches' => ['Batches', 'package'],
+        'admin.orders' => ['Orders', 'receipt'],
+        'admin.payments' => ['Payments', 'shield'],
+        'admin.announcements' => ['Announcements', 'bell'],
+        'admin.voting' => ['Voting', 'vote'],
+        'admin.users' => ['Users', 'users'],
+    ] as $route => [$label, $icon])
+        <a href="{{ route($route) }}" @class(['active' => request()->routeIs($route)])><x-icon :name="$icon" class="h-4 w-4" />{{ $label }}</a>
     @endforeach
 </aside>

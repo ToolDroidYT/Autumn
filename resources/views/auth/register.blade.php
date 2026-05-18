@@ -10,8 +10,8 @@
                 <x-select label="Program" name="program" :options="['DCE'=>'DCE','IT'=>'IT','CS'=>'CS','CSIT/DCE'=>'CSIT/DCE','CODES'=>'CODES']" />
                 <x-input label="Password" name="password" type="password" required />
                 <x-input label="Confirm Password" name="password_confirmation" type="password" required />
-                <x-button type="submit">Register</x-button>
-                <x-button href="{{ route('login') }}" variant="ghost">Already have an account</x-button>
+                <x-button type="submit"><x-icon name="plus" class="h-4 w-4" />Register</x-button>
+                <x-button href="{{ route('login') }}" variant="ghost"><x-icon name="log-in" class="h-4 w-4" />Already have an account</x-button>
             </form>
         </x-card>
     </section>

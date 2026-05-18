@@ -8,8 +8,8 @@
                 <x-input label="University Email" name="email" type="email" required autofocus />
                 <x-input label="Password" name="password" type="password" required />
                 <label style="display:flex;gap:8px;color:var(--muted);margin-bottom:18px;"><input type="checkbox" name="remember" value="1"> Remember me</label>
-                <x-button type="submit">Sign In</x-button>
-                <x-button href="{{ route('register') }}" variant="ghost">Create account</x-button>
+                <x-button type="submit"><x-icon name="log-in" class="h-4 w-4" />Sign In</x-button>
+                <x-button href="{{ route('register') }}" variant="ghost"><x-icon name="plus" class="h-4 w-4" />Create account</x-button>
             </form>
         </x-card>
     </section>

@@ -1,45 +1,39 @@
-# AGENTS.md
+# AUTUMN Agent Rules
 
-Rules for AI coding agents working on AUTUMN.
+AUTUMN is a Laravel Blade project for the Automated Unified Merchandise Network.
 
-## Project identity
+## Workflow
 
-- Project: AUTUMN
-- Full name: Automated Unified Merchandise Network
-- Purpose: DCE merchandise ordering and batch management system for UM Tagum College
+1. Inspect existing files before editing.
+2. Keep patches small and directly related to the requested task.
+3. Do not rewrite business logic unless the UI task strictly requires it.
+4. Preserve Laravel Blade, reusable components, Tailwind-style utility structure, and vanilla JavaScript.
+5. Do not introduce React, Vue, Inertia, external auth, OTP, email verification, or magic links.
+6. Do not invent unsupported product behavior.
+7. Run verification commands after edits where the environment supports them.
+8. Report changed files and verification results.
 
-## Working rules
+## Design Rules
 
-1. Inspect before editing.
-2. Keep changes narrow, safe, and reviewable.
-3. Do not refactor unrelated files.
-4. Preserve Blade-first architecture.
-5. Do not introduce React, Inertia, OTP, magic links, or external backend services.
-6. Use reusable Blade components when adding UI.
-7. Preserve the dark AUTUMN design tokens and component classes.
-8. Avoid dead UI. Every visible action must work, navigate, submit, open a modal, print, update state, or show a disabled state.
-9. Keep mobile responsiveness intact.
-10. Do not invent unsupported business rules.
-11. Update docs when setup, commands, routes, or behavior changes.
+- Use `public/assets/autumn.css` tokens.
+- Headings: Sora.
+- Body: Inter.
+- UI, labels, buttons, navigation: Lexend Deca.
+- Use `<x-icon name="..." />` for all icons.
+- Use reusable components instead of duplicating button/card/table/header markup.
+- Keep status and metadata treatments minimal. Avoid loud chips.
+- Keep the header compact. Do not add awkward spacing inside the AUTUMN wordmark.
+- Mobile navigation must not duplicate desktop navigation visually.
+- Keep animations subtle and respect reduced motion.
 
-## Required verification
+## Verification
 
-Run relevant checks after changes:
+Preferred checks:
 
 ```bash
-php artisan test
+php artisan view:clear
 php artisan route:list
-php artisan migrate:fresh --seed
 npm run build
 ```
 
-If a command cannot be run, state exactly why.
-
-## Output expectation
-
-Every agent response should include:
-
-- Changed files
-- What changed
-- Verification commands and results
-- Manual test checklist for affected pages
+If Composer/vendor dependencies are unavailable, run what is possible and state the limitation.

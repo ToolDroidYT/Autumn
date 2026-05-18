@@ -16,7 +16,7 @@
                             @csrf
                             <x-select label="Size" name="size" :options="collect($product->sizes ?? ['One Size'])->mapWithKeys(fn($s)=>[$s=>$s])->all()" />
                             <x-input label="Quantity" name="quantity" type="number" value="1" min="1" max="10" />
-                            <x-button type="submit">Add to Cart</x-button>
+                            <x-button type="submit"><x-icon name="shopping-bag" class="h-4 w-4" />Add to Cart</x-button>
                         </form>
                     </x-card>
                 @else

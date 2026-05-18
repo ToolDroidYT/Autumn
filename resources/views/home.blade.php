@@ -5,10 +5,10 @@
             <h1 class="hero-title">AUT<span class="accent-red">UM</span>N</h1>
             <div class="hero-kicker">Automated Unified Merchandise Network</div>
             <p class="hero-subtitle">Your one-stop platform for DCE merchandise — order, track, vote on designs, and receive e-receipts, all in one place.</p>
-            <div class="actions" style="justify-content:center;"><x-button href="{{ route('login') }}">↪ Sign In</x-button><x-button href="#products" variant="outline">Browse Products</x-button></div>
+            <div class="actions" style="justify-content:center;"><x-button href="{{ route('login') }}"><x-icon name="log-in" class="h-4 w-4" />Sign In</x-button><x-button href="#products" variant="outline"><x-icon name="shopping-bag" class="h-4 w-4" />Browse Products</x-button></div>
             <div class="hero-stats"><div class="hero-stat"><strong>4</strong><span>Programs</span></div><div class="hero-stat"><strong>100%</strong><span>Digital</span></div><div class="hero-stat"><strong>24/7</strong><span>Access</span></div></div>
         </div>
-        <a href="#products" class="down-cue">⌄</a>
+        <a href="#products" class="down-cue" aria-label="Skip to products"><x-icon name="chevron-down" class="h-5 w-5" /></a>
     </section>
 
     <section id="products" class="section">
@@ -28,14 +28,14 @@
             <div class="section-head"><x-badge>Features</x-badge><h2 class="section-title">Everything you <span class="accent-red">Need</span></h2></div>
             <div class="grid grid-3">
                 @foreach([
-                    ['Batch Ordering','Order within open batch slots. Slot-based system ensures fairness across all students.'],
-                    ['Design Voting','Participate in design elections. Vote counts are hidden until final 24 hours to ensure a fair process.'],
-                    ['Secure Payments','GCash, Maya, or in-person payment options. Upload proof and receive a QR-verified digital receipt.'],
-                    ['E-Receipts','Tamper-evident digital receipts with embedded QR codes linked to verified order records.'],
-                    ['Program-Based Access','IT, CS, CSIT/DCE, and CODES merch — only visible to authorized members of each program.'],
-                    ['Real-Time Availability','Live slot tracking shows available quantities per size in each active batch.'],
-                ] as [$title, $copy])
-                    <x-card><div class="feature-icon">▣</div><h3>{{ $title }}</h3><p>{{ $copy }}</p></x-card>
+                    ['package', 'Batch Ordering','Order within open batch slots. Slot-based system ensures fairness across all students.'],
+                    ['vote', 'Design Voting','Participate in design elections. Vote counts are hidden until final 24 hours to ensure a fair process.'],
+                    ['shield', 'Secure Payments','GCash, Maya, or in-person payment options. Upload proof and receive a QR-verified digital receipt.'],
+                    ['receipt', 'E-Receipts','Tamper-evident digital receipts with embedded QR codes linked to verified order records.'],
+                    ['users', 'Program-Based Access','IT, CS, CSIT/DCE, and CODES merch — only visible to authorized members of each program.'],
+                    ['clock', 'Real-Time Availability','Live slot tracking shows available quantities per size in each active batch.'],
+                ] as [$icon, $title, $copy])
+                    <x-card><div class="feature-icon"><x-icon :name="$icon" class="h-5 w-5" /></div><h3>{{ $title }}</h3><p>{{ $copy }}</p></x-card>
                 @endforeach
             </div>
         </div>
@@ -48,9 +48,9 @@
                 <h2 class="section-title" style="text-align:left;">Built for the <span class="accent-red">DCE Community</span></h2>
                 <p class="section-copy" style="margin-inline:0;">AUTUMN — the <strong style="color:var(--orange);">Automated Unified Merchandise Network</strong> — is a centralized web-based system exclusive to the Department of Computing Education at UMTC.</p>
                 <p class="section-copy" style="margin-inline:0;">It replaces fragmented manual processes by letting students browse, order, pay, track, and receive receipts while giving organizers full administrative control.</p>
-                <ul class="list-check"><li>University Gmail-based authentication</li><li>Program-filtered product visibility</li><li>Role-based admin dashboards</li><li>Transparent design voting system</li></ul>
+                <ul class="list-check"><li><x-icon name="check" class="h-4 w-4" />University Gmail-based authentication</li><li><x-icon name="check" class="h-4 w-4" />Program-filtered product visibility</li><li><x-icon name="check" class="h-4 w-4" />Role-based admin dashboards</li><li><x-icon name="check" class="h-4 w-4" />Transparent design voting system</li></ul>
             </div>
-            <div class="about-visual"><div><h3 class="logo"><span>AUT</span><span class="accent-red">UM</span><span>N</span></h3><p>Department of Computing Education</p></div><div class="float-stat"><strong style="font-size:28px;">4</strong><br><span>Programs Served</span></div></div>
+            <div class="about-visual"><div><h3 class="logo"><x-icon name="leaf" class="logo-leaf h-5 w-5" /><span class="logo-word">AUT<span class="accent-red">UM</span>N</span></h3><p>Department of Computing Education</p></div><div class="float-stat"><strong style="font-size:28px;">4</strong><br><span>Programs Served</span></div></div>
         </div>
     </section>
 
@@ -76,6 +76,6 @@
     </section>
 
     <section class="section cta-band">
-        <div class="container"><h2 class="section-title">Ready to <span class="accent-red">Order?</span></h2><p class="section-copy">Join the DCE merchandise system. Sign in with your university Gmail to get started.</p><x-button href="{{ route('login') }}">↪ Sign In</x-button></div>
+        <div class="container"><h2 class="section-title">Ready to <span class="accent-red">Order?</span></h2><p class="section-copy">Join the DCE merchandise system. Sign in with your university Gmail to get started.</p><x-button href="{{ route('login') }}"><x-icon name="log-in" class="h-4 w-4" />Sign In</x-button></div>
     </section>
 </x-app-layout>

@@ -12,12 +12,26 @@
     };
     showToast(bodyToast);
 
-    $('[data-mobile-toggle]')?.addEventListener('click', () => {
-        $('[data-mobile-panel]')?.classList.toggle('is-open');
+    const mobileToggle = $('[data-mobile-toggle]');
+    const mobilePanel = $('[data-mobile-panel]');
+    mobileToggle?.addEventListener('click', () => {
+        const isOpen = mobilePanel?.classList.toggle('is-open') ?? false;
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    $$('[data-mobile-panel] a').forEach((link) => {
+        link.addEventListener('click', () => {
+            mobilePanel?.classList.remove('is-open');
+            mobileToggle?.setAttribute('aria-expanded', 'false');
+        });
     });
 
     $$('[data-faq-trigger]').forEach((button) => {
-        button.addEventListener('click', () => button.closest('[data-faq-item]')?.classList.toggle('is-open'));
+        button.addEventListener('click', () => {
+            const item = button.closest('[data-faq-item]');
+            const isOpen = item?.classList.toggle('is-open') ?? false;
+            button.setAttribute('aria-expanded', String(isOpen));
+        });
     });
 
     $$('[data-confirm]').forEach((form) => {

@@ -2,7 +2,10 @@
     <div class="container">
         <div class="footer-grid">
             <div>
-                <a href="{{ route('home') }}" class="logo"><span class="logo-leaf">⌁</span><span>AUT</span><span class="accent-red">UM</span><span>N</span></a>
+                <a href="{{ route('home') }}" class="logo" aria-label="AUTUMN home">
+                    <x-icon name="leaf" class="logo-leaf h-5 w-5" />
+                    <span class="logo-word">AUT<span class="accent-red">UM</span>N</span>
+                </a>
                 <p>Automated Unified Merchandise Network for the Department of Computing Education, UMTC.</p>
             </div>
             <div>
@@ -20,6 +23,6 @@
                 <a href="{{ route('products.index', ['program' => 'CODES']) }}">CODES</a>
             </div>
         </div>
-        <p style="font-size:12px;color:var(--muted-2);">© {{ date('Y') }} AUTUMN · Department of Computing Education, UMTC. All rights reserved.</p>
+        <p class="footer-note">© {{ date('Y') }} AUTUMN · Department of Computing Education, UMTC. All rights reserved.</p>
     </div>
 </footer>

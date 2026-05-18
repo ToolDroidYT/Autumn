@@ -6,7 +6,7 @@
                 <form class="grid grid-3" method="GET">
                     <x-input label="Search" name="q" value="{{ request('q') }}" />
                     <x-select label="Program" name="program" :selected="request('program')" :options="[''=>'All programs','DCE'=>'DCE','IT'=>'IT','CS'=>'CS','CSIT/DCE'=>'CSIT/DCE','CODES'=>'CODES']" />
-                    <div class="field"><label>&nbsp;</label><x-button type="submit">Filter</x-button></div>
+                    <div class="field"><label>&nbsp;</label><x-button type="submit"><x-icon name="filter" class="h-4 w-4" />Filter</x-button></div>
                 </form>
             </x-card>
             @if($products->count())
